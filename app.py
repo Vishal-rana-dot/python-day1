@@ -1,25 +1,31 @@
-nums = [7, 12, 3, 9, 20]
+n = int(input())
+commands = []
 
-# suppose I want to add 30 at index 1
-nums.insert(1, 30)
-print(nums)  # printing the list
+for i in range(n):
+    commands.append(input())
 
-# now removing the first element
-nums.pop(0)
-print(nums)
+arr = []
 
-# adding a number at the end of the list
-nums.append(50)
-print(nums)
+for cmd in commands:
+    command = cmd.split()
 
-# sorting the list
-nums.sort()
-print(nums)
+    if command[0] == "insert":
+        arr.insert(int(command[1]), int(command[2]))
 
-# removing the last element
-nums.pop()
-print(nums)
+    elif command[0] == "print":
+        print(arr)
 
-# reversing the list
-nums.reverse()
-print(nums)
+    elif command[0] == "remove":
+        arr.remove(int(command[1]))
+
+    elif command[0] == "append":
+        arr.append(int(command[1]))
+
+    elif command[0] == "sort":
+        arr.sort()
+
+    elif command[0] == "pop":
+        arr.pop()
+
+    elif command[0] == "reverse":
+        arr.reverse()
